@@ -62,6 +62,8 @@
     "husky": "^0.11.9",
     "nyc": "^8.4.0",
     "rimraf": "^2.5.4",
+    "sinon": "^1.17.6",
+    "unity-api": "^1.0.3",
     "validate-commit-msg": "^2.8.2"
   },
   "ava": {
@@ -69,7 +71,7 @@
       "test/**/*.spec.js"
     ],
     "source": [
-      "src/*.js"
+      "src/**/*.js"
     ],
     "concurrency": 4,
     "failFast": false,
@@ -79,6 +81,19 @@
       "babel-polyfill"
     ],
     "babel": "inherit"
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "src/**/*spec.js"
+    ],
+    "reporter": [
+      "html",
+      "text",
+      "text-summary"
+    ]
   },
   "config": {
     "commitizen": {
