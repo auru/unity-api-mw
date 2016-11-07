@@ -14,7 +14,7 @@ export default function retryMw(settings) {
         let retry = options && options[settings.key] !== undefined ? options[settings.key] : settings.count;
         let result;
 
-        if (!Number.isInteger(retry) || retry === 0) {
+        if (!Number.isInteger(retry) || retry <= 0) {
             return await next();
         }
 
