@@ -13,6 +13,8 @@
 # Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
+  * [API](#api)
+    * [retry](#retrysettings)
   * [Contributing](#contributing)
   * [License](#license)
 
@@ -20,6 +22,52 @@
 
 ```bash
 npm i --save unity-api-mw
+```
+# Usage
+
+If API has been created with [unity-api](https://github.com/auru/unity-api), then its methods can be called like this: `API[resource][method](methodParams, middlewareOptions)`. 
+
+Even though the entire `middlewareOptions` object is available to every middleware in chain, it's best to namespace every middleware with its own key in `middlewareOptions`. That's why middleware should initially come in a form of high-order function with plain object `settings` as its argument, so that end-user can override the defaults.
+
+# API 
+
+## retry(settings)
+
+If [`Response.ok`](https://developer.mozilla.org/en-US/docs/Web/API/Response/ok) from [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/fetch) is `false`, retry the request again.
+
+### settings {Object} *Optional*
+Middleware settings
+
+#### key {String} *Optional*
+**Default:** `'retry'`
+
+Key in `middlewareOptions` to look up.
+
+#### count {Number} *Optional*
+**Default:** `0`
+
+How many times middleware should attempt to re-`fetch` if it fails the first time.
+
+**Example:**
+```js
+// api.js
+import resources from './api/resources';
+import createAPI from 'unity-api';
+import { retry } from 'unity-api-mw'; // or import retry from 'unity-api-mw/lib/retry'
+
+const middleware = [
+  retry({ key: 'retry', count: 1 }) // retry on every fail once
+]
+
+const API = createAPI(resources, middleware, 'api', fetchOptions);
+
+export default API;
+```
+
+```js
+// user.js
+import api from './api';
+API.user.get({ id: 1 }, { retry: 2 }); // get user with id 1, retry twice on fail instead of once.
 ```
 
 # Contributing
