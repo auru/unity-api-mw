@@ -1,7 +1,7 @@
 import test from 'ava';
 import sinon from 'sinon';
 
-import retry from '../../src/mw/retry';
+import retry from '../../src/retry';
 import APIError from 'unity-api/dist/error';
 
 const APIStub = async val => val;

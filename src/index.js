@@ -1,1 +1,1 @@
-export { default as retry } from './mw/retry';
+export { default as retry } from './retry';

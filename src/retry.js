@@ -1,4 +1,4 @@
-import { isAPIError } from '../utils';
+import { isAPIError } from './utils';
 
 const defaultSettings = {
     key: 'retry',
