@@ -1,5 +1,1 @@
-import retry from './mw/retry';
-
-export default {
-    retry
-};
+export { default as retry } from './mw/retry';
