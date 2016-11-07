@@ -1,3 +1,10 @@
+<a name="1.0.1"></a>
+## 1.0.1 (2016-11-07)
+
+* fix(compile): middleware in lib folder ([9ca1f80](https://github.com/auru/unity-api-mw/commit/9ca1f80))
+
+
+
 <a name="1.0.0"></a>
 # 1.0.0 (2016-11-07)
 
