@@ -1,7 +1,7 @@
 {
   "name": "unity-api-mw",
   "version": "1.0.1",
-  "description": "",
+  "description": "Collection of middleware for unity-api.",
   "main": "lib/index.js",
   "scripts": {
     "build": "npm run test && npm run clean && ./node_modules/.bin/babel src --out-dir lib",

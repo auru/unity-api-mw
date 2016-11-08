@@ -8,7 +8,7 @@
 [![Deps-Dev](https://david-dm.org/auru/unity-api-mw/dev-status.svg)](https://david-dm.org/auru/unity-api-mw)
 [![Dependency Status](https://dependencyci.com/github/auru/unity-api-mw/badge)](https://dependencyci.com/github/auru/unity-api-mw)
 
-> Middleware for [unity-api](https://github.com/auru/unity-api).
+> Collection of middleware for [unity-api](https://github.com/auru/unity-api).
 
 # Table of Contents
   * [Installation](#installation)
