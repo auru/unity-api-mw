@@ -1,3 +1,10 @@
+<a name="1.0.2"></a>
+## 1.0.2 (2016-11-08)
+
+* docs(description): Added package description ([c745458](https://github.com/auru/unity-api-mw/commit/c745458))
+
+
+
 <a name="1.0.1"></a>
 ## 1.0.1 (2016-11-07)
 
