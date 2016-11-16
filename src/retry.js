@@ -22,7 +22,7 @@ export default function retryMw(settings) {
 
             result = await next();
 
-            if (isAPIError(result)) {
+            if (isAPIError(result) && result.code >= 500 && result.code < 600) {
                 continue;
             }
 
