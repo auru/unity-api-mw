@@ -1,6 +1,6 @@
 {
   "name": "unity-api-mw",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Collection of middleware for unity-api.",
   "main": "lib/index.js",
   "scripts": {

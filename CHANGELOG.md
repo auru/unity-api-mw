@@ -1,3 +1,11 @@
+<a name="1.0.3"></a>
+## 1.0.3 (2016-11-16)
+
+* feat(retry): retry only on error code >=500 && code <600 ([0f8ea70](https://github.com/auru/unity-api-mw/commit/0f8ea70))
+* chore(package): update nyc to version 9.0.1 ([1e6ccea](https://github.com/auru/unity-api-mw/commit/1e6ccea))
+
+
+
 <a name="1.0.2"></a>
 ## 1.0.2 (2016-11-08)
 
