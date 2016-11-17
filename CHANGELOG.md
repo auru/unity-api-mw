@@ -1,3 +1,13 @@
+<a name="1.1.0"></a>
+# 1.1.0 (2016-11-17)
+
+* docs(cache): cache middleware documentation ([08e7d82](https://github.com/auru/unity-api-mw/commit/08e7d82))
+* feat(mw): cache middleware ([771c0dd](https://github.com/auru/unity-api-mw/commit/771c0dd))
+* chore(package): update ava to version 0.17.0 ([5c9a6f8](https://github.com/auru/unity-api-mw/commit/5c9a6f8))
+* chore(release): do not try to auto-commit before release ([d1b254b](https://github.com/auru/unity-api-mw/commit/d1b254b))
+
+
+
 <a name="1.0.3"></a>
 ## 1.0.3 (2016-11-16)
 
