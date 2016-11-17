@@ -38,11 +38,20 @@
   "keywords": [
     "api",
     "async",
+    "cache",
     "middleware",
+    "retry",
     "unity"
   ],
   "engines": {
     "node": ">=4"
+  },
+  "dependencies": {
+    "unity-cache": "^1.1.1",
+    "unity-utils": "^1.0.4"
+  },
+  "peerDependencies": {
+    "unity-api": "^1.0.3"
   },
   "devDependencies": {
     "ava": "^0.17.0",
@@ -59,11 +68,14 @@
     "cz-conventional-changelog": "^1.2.0",
     "eslint": "^3.7.1",
     "eslint-plugin-ava": "^3.1.0",
+    "fetch-mock": "^5.5.0",
     "husky": "^0.11.9",
+    "mock-webstorage": "^1.0.3",
     "nyc": "^9.0.1",
     "rimraf": "^2.5.4",
     "sinon": "^1.17.6",
     "unity-api": "^1.0.3",
+    "unity-cache": "^1.1.0",
     "validate-commit-msg": "^2.8.2"
   },
   "ava": {
@@ -77,6 +89,7 @@
     "failFast": false,
     "tap": false,
     "require": [
+      "./.ava.setup",
       "babel-register",
       "babel-polyfill"
     ],
