@@ -76,7 +76,7 @@
     "sinon": "^1.17.6",
     "unity-api": "^1.0.3",
     "unity-cache": "^1.1.0",
-    "validate-commit-msg": "^2.8.2"
+    "validate-commit-msg": "^2.10.1"
   },
   "ava": {
     "files": [
