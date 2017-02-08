@@ -1,3 +1,19 @@
+<a name="1.1.1"></a>
+## 1.1.1 (2017-02-08)
+
+* chore: add yarn.lock ([9f0029b](https://github.com/auru/unity-api-mw/commit/9f0029b))
+* chore(package): update ava to version 0.18.1 ([524ec31](https://github.com/auru/unity-api-mw/commit/524ec31))
+* chore(package): update babel-preset-stage-2 to version 6.22.0 ([92350cb](https://github.com/auru/unity-api-mw/commit/92350cb))
+* chore(package): update eslint to version 3.14.0 ([22a308e](https://github.com/auru/unity-api-mw/commit/22a308e))
+* chore(package): update eslint-plugin-ava to version 4.0.1 ([cba94a1](https://github.com/auru/unity-api-mw/commit/cba94a1))
+* chore(package): update husky to version 0.12.0 ([147f2d6](https://github.com/auru/unity-api-mw/commit/147f2d6))
+* chore(package): update nyc to version 10.0.0 ([074dde7](https://github.com/auru/unity-api-mw/commit/074dde7))
+* chore(package): update unity-cache to version 2.0.0 ([52a000a](https://github.com/auru/unity-api-mw/commit/52a000a))
+* chore(package): update validate-commit-msg to version 2.10.1 ([79fc50d](https://github.com/auru/unity-api-mw/commit/79fc50d))
+* fix(deps): freeze unity-cache version ([7642f1c](https://github.com/auru/unity-api-mw/commit/7642f1c))
+
+
+
 <a name="1.1.0"></a>
 # 1.1.0 (2016-11-17)
 
