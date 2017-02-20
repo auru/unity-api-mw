@@ -47,7 +47,7 @@
     "node": ">=4"
   },
   "dependencies": {
-    "unity-cache": "1.1.1",
+    "unity-cache": "2.0.0",
     "unity-utils": "^1.0.4"
   },
   "peerDependencies": {
