@@ -13,7 +13,7 @@ const apiResources = {
         methods: {
             get: ({ id }) => ({ path: ['get', id] }),
             set: ({ id }) => ({ path: ['set', id], options: { method: 'POST' } }),
-            delete: ({ id, force = true }) => ({ path: ['delete', id], query: { force }, options: { method: 'DELETE' }, method: 'json'}),
+            delete: ({ id, force = true }) => ({ path: ['delete', id], query: { force }, options: { method: 'DELETE' }, method: 'json'})
         }
     }
 };
@@ -46,9 +46,9 @@ test.after('unmock fetch', () => {
     fetchMock.restore();
 });
 
-test.beforeEach('create api, cache and spies', async t => {
+test.beforeEach('create api, cache and spies', t => {
     t.context.cache = cacheMW(CACHEMW_SETTINGS);
-    t.context.api = createAPI(apiResources, cacheMW(CACHEMW_SETTINGS));
+    t.context.api = createAPI(apiResources, cacheMW(CACHEMW_SETTINGS), '/api/');
     t.context.spyCacheGet = sinon.spy(CACHEMW_SETTINGS.cache.get);
     t.context.spyCacheSet = sinon.spy(CACHEMW_SETTINGS.cache.set);
 });
@@ -93,7 +93,7 @@ test('api returns error', async t => {
     t.true(t.context.spyCacheGet.notCalled);
 });
 
-test('throws on invalid cache bin', async t => {
+test('throws on invalid cache bin', t => {
     t.context.api = createAPI(apiResources, cacheMW({ ...CACHEMW_SETTINGS, bin: 'notExists' }));
     const apiSpy = sinon.spy(t.context.api.user.get);
     t.throws(apiSpy({ id: 1 }), TypeError);
