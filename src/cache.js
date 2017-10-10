@@ -29,6 +29,11 @@ function createCacheKey(resourceId, method, params) {
     return result.join(':');
 }
 
+function errorHandler(error) {
+    console.error(error); // eslint-disable-line no-console
+    return null;
+}
+
 export default function cacheMw(settings = {}) {
 
     const { cache, bin = 'api', expire = Number.MAX_SAFE_INTEGER, resources = {} } = settings;
@@ -41,7 +46,7 @@ export default function cacheMw(settings = {}) {
 
         const cacheKey = createCacheKey(resourceId, method, params);
 
-        const cachedResult = await cache.get(bin, cacheKey);
+        const cachedResult = await cache.get(bin, cacheKey).catch(errorHandler);
 
         if (cachedResult) return cachedResult;
 
@@ -53,7 +58,7 @@ export default function cacheMw(settings = {}) {
 
         const cacheExpire = methodExpire === undefined ? expire : methodExpire;
 
-        await cache.set(bin, cacheKey, result, cacheExpire);
+        await cache.set(bin, cacheKey, result, cacheExpire).catch(errorHandler);
 
         return result;
     };

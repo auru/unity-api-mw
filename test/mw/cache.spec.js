@@ -93,10 +93,10 @@ test('api returns error', async t => {
     t.true(t.context.spyCacheGet.notCalled);
 });
 
-test('throws on invalid cache bin', t => {
-    t.context.api = createAPI(apiResources, cacheMW({ ...CACHEMW_SETTINGS, bin: 'notExists' }));
+test('not throws on invalid cache bin', t => {
+    t.context.api = createAPI(apiResources, cacheMW({ ...CACHEMW_SETTINGS, bin: 'notExists' }), '/api/');
     const apiSpy = sinon.spy(t.context.api.user.get);
-    t.throws(apiSpy({ id: 1 }), TypeError);
+    t.notThrows(apiSpy({ id: 1 }));
 });
 
 test('uncached api call without expiration', async t => {
