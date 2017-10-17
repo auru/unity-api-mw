@@ -29,14 +29,14 @@ function createCacheKey(resourceId, method, params) {
     return result.join(':');
 }
 
-function errorHandler(error) {
+function defaultErrorHandler(error) {
     console.error(error); // eslint-disable-line no-console
     return null;
 }
 
 export default function cacheMw(settings = {}) {
 
-    const { cache, bin = 'api', expire = Number.MAX_SAFE_INTEGER, resources = {} } = settings;
+    const { cache, bin = 'api', expire = Number.MAX_SAFE_INTEGER, resources = {}, errorHandler = defaultErrorHandler } = settings;
 
     const registry = createRegistry(resources);
 
