@@ -1,3 +1,12 @@
+<a name="1.3.0"></a>
+# 1.3.0 (2017-10-18)
+
+* fix(cache): add cache error catching ([f979228](https://github.com/auru/unity-api-mw/commit/f979228))
+* fix(package.json): node >= 6 ([4c9d7f1](https://github.com/auru/unity-api-mw/commit/4c9d7f1))
+* fix(travis): remove node 4,5 ([0341189](https://github.com/auru/unity-api-mw/commit/0341189))
+
+
+
 <a name="1.1.1"></a>
 ## 1.1.1 (2017-02-08)
 
