@@ -22,7 +22,6 @@ const APIResponseStub = async val => val;
 const APIResponseStubNormal = APIResponseStub.bind(null, {});
 const APIResponseStubError500 = APIResponseStub.bind(null, new APIError(500));
 
-
 const cacheService = createCache('api');
 
 const CACHEMW_SETTINGS = {
@@ -55,7 +54,7 @@ test.beforeEach('create api, cache and spies', t => {
 
 test.afterEach('destroy api, cache and spies', async t => {
     fetchMock.reset();
-    await CACHEMW_SETTINGS.cache.drop('api');
+    await CACHEMW_SETTINGS.cache.remove();
     delete t.context.cache;
     delete t.context.api;
     delete t.context.spyCacheGet;
@@ -93,10 +92,10 @@ test('api returns error', async t => {
     t.true(t.context.spyCacheGet.notCalled);
 });
 
-test('throws on invalid cache bin', t => {
-    t.context.api = createAPI(apiResources, cacheMW({ ...CACHEMW_SETTINGS, bin: 'notExists' }));
+test('not throws on invalid cache bin', t => {
+    t.context.api = createAPI(apiResources, cacheMW({ ...CACHEMW_SETTINGS, bin: 'notExists' }), '/api/');
     const apiSpy = sinon.spy(t.context.api.user.get);
-    t.throws(apiSpy({ id: 1 }), TypeError);
+    t.notThrows(apiSpy({ id: 1 }));
 });
 
 test('uncached api call without expiration', async t => {
@@ -111,7 +110,7 @@ test('uncached api call without expiration', async t => {
 test('complex uncached api call with expiration', async t => {
     const cacheKey = 'user:get:get/1';
     const cachedResultBefore = await CACHEMW_SETTINGS.cache.get('api', cacheKey);
-    const cachedResultExpireBefore = await CACHEMW_SETTINGS.cache.get('___expire___', 'api::'+cacheKey, false);
+    const cachedResultExpireBefore = await CACHEMW_SETTINGS.cache.get('___expire___', 'api::'+cacheKey);
     t.is(cachedResultBefore, null, 'should be null before');
     t.is(cachedResultExpireBefore, null, 'should be null before');
 

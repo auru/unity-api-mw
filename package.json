@@ -16,8 +16,8 @@
     "prepublish": "npm run build",
     "precommit": "npm test",
     "commitmsg": "./node_modules/.bin/validate-commit-msg",
-    "test": "npm run lint-prod && ./node_modules/.bin/nyc ./node_modules/.bin/ava --verbose",
-    "test:watch": "npm run lint && ./node_modules/.bin/nyc ./node_modules/.bin/ava --verbose --watch",
+    "test": "npm run lint-prod && ./node_modules/.bin/nyc ./node_modules/.bin/ava --verbose --serial",
+    "test:watch": "npm run lint && ./node_modules/.bin/nyc ./node_modules/.bin/ava --verbose --serial --watch",
     "release:patch": "npm version patch && git push upstream master --tags && npm publish",
     "release:minor": "npm version minor && git push upstream master --tags && npm publish",
     "release:major": "npm version major && git push upstream master --tags && npm publish"
@@ -44,10 +44,10 @@
     "unity"
   ],
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "dependencies": {
-    "unity-cache": "1.1.1",
+    "unity-cache": "^2.1.0",
     "unity-utils": "^1.0.4"
   },
   "peerDependencies": {
@@ -68,9 +68,9 @@
     "cz-conventional-changelog": "^1.2.0",
     "eslint": "^3.14.0",
     "eslint-plugin-ava": "^4.0.1",
+    "fake-indexeddb": "^1.0.8",
     "fetch-mock": "^5.5.0",
     "husky": "^0.12.0",
-    "mock-webstorage": "^1.0.3",
     "nyc": "^10.0.0",
     "rimraf": "^2.5.4",
     "sinon": "^2.0.0",
