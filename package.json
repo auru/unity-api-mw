@@ -71,7 +71,7 @@
     "fake-indexeddb": "^1.0.8",
     "fetch-mock": "^5.5.0",
     "husky": "^0.12.0",
-    "nyc": "^10.0.0",
+    "nyc": "^12.0.2",
     "rimraf": "^2.5.4",
     "sinon": "^2.0.0",
     "unity-api": "^1.0.3",
