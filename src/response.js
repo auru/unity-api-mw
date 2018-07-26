@@ -10,7 +10,7 @@ export default function responseMw(settings) {
     return next => async options => {
         const result = await next();
 
-        if (isAPIError(result) || options[settings.key]) {
+        if (isAPIError(result) || (options && options[settings.key])) {
             return result;
         }
 
