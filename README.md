@@ -15,6 +15,7 @@
   * [Usage](#usage)
   * [API](#api)
     * [retry](#retrysettings)
+    * [response](#responsesettings)
     * [cache](#cachesettings)
   * [Contributing](#contributing)
   * [License](#license)
@@ -66,7 +67,7 @@ const middleware = [
   retry({ key: 'retry', count: 1 }) // retry on every fail once
 ]
 
-const API = createAPI(resources, middleware, 'api', fetchOptions);
+const API = createAPI(resources, middleware, 'api');
 
 export default API;
 ```
@@ -76,6 +77,48 @@ export default API;
 import API from './api';
 API.user.get({ id: 1 }, { retry: 2 }); // get user with id 1, retry twice on fail instead of once.
 ```
+
+## response(settings)
+
+If the response option is enabled, you can get the whole [response](https://developer.mozilla.org/en-US/docs/Web/API/Response). 
+
+### settings {Object} *Optional*
+Middleware settings.
+
+#### key {String} *Optional*
+**Default:** `'response'`
+
+Key in `middlewareOptions` to look up.
+
+> Now you can make API calls and get the whole response:
+
+```js
+API.user.get({ id: 1 }, { response: true });
+```
+
+**Example:**
+```js
+// api.js
+import resources from './api/resources';
+import createAPI from 'unity-api';
+import { response } from 'unity-api-mw'; // or import retry from 'unity-api-mw/lib/response'
+
+const middleware = [
+  response({ key: 'response' })
+]
+
+const API = createAPI(resources, middleware, 'api');
+
+export default API;
+```
+
+```js
+// user.js
+import API from './api';
+API.user.get({ id: 1 }, { response: true }); // get response.
+API.user.get({ id: 1 }, { response: false }); // get response body.
+```
+
 ## cache(settings)
 
 Cache [unity-api](https://github.com/unity/unity-api) responses with [unity-cache](https://github.com/unity/unity-cache).
