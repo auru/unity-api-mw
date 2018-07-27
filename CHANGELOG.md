@@ -1,3 +1,11 @@
+<a name="2.0.0"></a>
+## 2.0.0 (2018-07-27)
+
+* feat(response): add new middleware ([2016eae](https://github.com/auru/unity-api-mw/commit/2016eae))
+* feat(response): add tests and fix readme ([febc2e7](https://github.com/auru/unity-api-mw/commit/febc2e7))
+
+
+
 <a name="1.3.0"></a>
 # 1.3.0 (2017-10-18)
 
