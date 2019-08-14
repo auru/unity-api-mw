@@ -72,7 +72,7 @@
     "fetch-mock": "^5.5.0",
     "husky": "^0.12.0",
     "nyc": "^10.0.0",
-    "rimraf": "^2.5.4",
+    "rimraf": "^2.7.0",
     "sinon": "^2.0.0",
     "unity-api": "^1.0.3",
     "validate-commit-msg": "^2.10.1"
